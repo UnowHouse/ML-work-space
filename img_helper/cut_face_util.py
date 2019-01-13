@@ -15,7 +15,7 @@ def cut_face_from_img(img_path,new_path,type='jpg',is_rgb=False):
     img = cv2.imread(img_path)
     try:
         gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-    except TypeError as e:
+    except:
         gray = img    
     faces = face_cascade.detectMultiScale(gray,scaleFactor = 1.15,minNeighbors = 5,minSize = (5,5),flags = 2)	
     if len(faces)>0:
